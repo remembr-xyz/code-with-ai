@@ -1,0 +1,52 @@
+# .cursorrules
+#
+# These are Cursor-specific operating rules. Cursor injects this file
+# into the system prompt of every conversation in this project.
+#
+# Difference from AGENTS.md:
+#   - AGENTS.md is the project BRIEFING (what is this thing, where do
+#     things live, conventions). Other AI tools read it too.
+#   - .cursorrules is the OPERATING STANDARD (how to behave during
+#     every conversation). Cursor-only.
+#
+# Keep this file SHORT. ~30 lines, max. Long rules files get ignored
+# by the model in long conversations. Less is more.
+#
+# Edit this when you find yourself giving the same correction twice.
+
+
+## Default behavior
+
+- Always read the existing code before suggesting changes. Don't guess.
+- When making non-trivial edits, explain the plan in 2-3 sentences before writing code. Wait for confirmation only if the change is large.
+- Keep changes small and focused. One concern per edit.
+- After any change to `src/`, run `pytest` and show me the output.
+
+
+## Style
+
+- Match the existing code style. If the file uses single quotes, use single quotes.
+- Add type hints to new public functions.
+- No comments that just restate the code. Comments explain *why*.
+
+
+## Safety
+
+- Never run destructive shell commands (`rm`, `git reset --hard`, `git push --force`, `npm publish`, anything that writes to `/`, `/etc`, `~/`) without explicit confirmation from me.
+- Never commit `.env`, `secrets/`, `*.key`, `*.pem`.
+- Don't touch `.git/`, `.venv/`, `node_modules/`, or `data/`.
+- If a task requires more than 10 file edits in one go, stop and ask if I want to split it.
+
+
+## When uncertain
+
+- Ask, don't assume. A 5-second question beats a 5-minute wrong rewrite.
+- If a library or function might not exist, grep for it first.
+- If two reasonable approaches exist, surface both and let me pick.
+
+
+## Output format
+
+- For code changes, prefer diffs over full-file rewrites.
+- For explanations, prefer bullets over paragraphs.
+- For questions back to me, prefer one focused question over five vague ones.

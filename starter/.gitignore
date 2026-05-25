@@ -1,0 +1,39 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors (keep AI tools' state out of git)
+.vscode/settings.json
+.idea/
+*.swp
+
+# Cursor's local state — but NOT .cursorrules (we want to commit that)
+.cursor/cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Secrets — NEVER commit these
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# Agent audit logs (we'll create this in Lab 3)
+.agent-audit.log
