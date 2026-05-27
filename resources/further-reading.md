@@ -1,5 +1,7 @@
 # Further reading
 
+> **TL;DR** Subscribe to [Simon Willison](https://simonwillison.net) (the single best independent voice) and [Learn Agentic AI](https://learnagentic.substack.com) (mine, daily). Read the ReAct paper, the [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) post, and one chapter of *AI Engineering* by Chip Huyen. That's a month's worth of progress.
+
 If the workshop hooked you, here's where to go next. Curated, not comprehensive.
 
 ## Daily reading
@@ -76,3 +78,9 @@ If you want to seriously level up in a month:
 **Week 4 — ship.** Pick one of your real problems and write a 100-line agent that solves it. Use what you wrote tonight as the base.
 
 Good night and good shipping.
+
+## See also
+
+- [`repos-to-study.md`](repos-to-study.md) — if you'd rather learn by reading code
+- [`safeguards.md`](safeguards.md) — the security-specific reading list
+- [`prompting.md`](prompting.md) — the prompting-specific reading list

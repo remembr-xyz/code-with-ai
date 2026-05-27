@@ -1,6 +1,18 @@
 # Local models
 
+> **TL;DR** Install [Ollama](https://ollama.com), pull `qwen2.5-coder:7b`, point Cursor at `http://localhost:11434/v1`. Done. Local models trail frontier cloud models in 2026 (~70% of the quality) but the privacy/offline/cost wins are real.
+
 Running LLMs on your own laptop. Most of the speed/quality argument is decided by the model you pick; the runtimes are interchangeable.
+
+## Cloud vs local at a glance (slide 27)
+
+| | Cloud (Claude/GPT) | Local (Ollama) |
+|---|---|---|
+| Quality | ★★★★★ | ★★★ (improving fast) |
+| Speed | Fast | Depends on hardware |
+| Cost | API $ | Free after hardware |
+| Privacy | Sent to provider | Stays on machine |
+| Offline | ❌ | ✅ |
 
 ## The two runtimes worth your time
 
@@ -107,3 +119,9 @@ They're great at:
 - **Linux/Windows with NVIDIA:** GPU VRAM is what matters. 8GB VRAM fits a 7B 4-bit model. 24GB VRAM (RTX 4090) fits 30B+.
 - **CPU-only:** works for <7B models. Slower but real. Phi-3.5 3.8B runs surprisingly fast on a modern CPU.
 - **RAM rule:** `model_size_GB × 1.2` is a safe floor. Buy more if you can.
+
+## See also
+
+- [`../labs/05-local-models.md`](../labs/05-local-models.md) — Lab 5 walks you through swapping Cursor's brain to Ollama
+- [`tools.md`](tools.md) — which AI tools best support local models (Aider and Continue lead)
+- [`safeguards.md`](safeguards.md) — local doesn't mean safe; scope still matters

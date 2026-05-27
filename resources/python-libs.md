@@ -1,5 +1,7 @@
 # Python libraries for building agents
 
+> **TL;DR** Start with the `anthropic` or `openai` SDK. Add `pydantic-ai` when you want typed outputs. Reach for `langgraph` or `crewai` only when plain SDK code is genuinely insufficient. Skip the heavy frameworks on day one.
+
 The Python libraries worth knowing if you're going to ship your own agents. Ordered roughly by what you'll need first.
 
 ## The basics — SDK calls
@@ -16,6 +18,15 @@ Official OpenAI SDK. Also works with Ollama and LM Studio (they expose an OpenAI
 
 ```bash
 pip install openai
+```
+
+## Provider switching
+
+### [`litellm`](https://github.com/BerriAI/litellm)
+One client, every provider. Anthropic, OpenAI, Gemini, Bedrock, Groq, Mistral, Ollama — all behind a single OpenAI-compatible interface. Worth knowing for the day you need to swap providers (cost, outages, A/B tests). Has its own proxy server too.
+
+```bash
+pip install litellm
 ```
 
 ## Structured outputs
@@ -50,6 +61,17 @@ Multi-agent orchestration. Multiple agents with roles, working in concert. Genui
 ### [`autogen`](https://github.com/microsoft/autogen)
 Microsoft's multi-agent framework. Lots of features. Long-running conversations between agents.
 
+## Evals and observability
+
+### [`promptfoo`](https://github.com/promptfoo/promptfoo)
+The most popular open-source eval framework. Run your prompts against expected outputs, score, regression-test on prompt changes. Use this before going to production.
+
+### [`langfuse`](https://github.com/langfuse/langfuse)
+Open-source observability. Logs every LLM call with traces, costs, and structured fields. Self-hostable or cloud. Worth wiring in early.
+
+### [`helicone`](https://www.helicone.ai)
+Hosted observability. Proxy-based — drops in with one env var. Strong cost analytics.
+
 ## Supporting utilities
 
 ### [`tenacity`](https://github.com/jd/tenacity)
@@ -76,3 +98,9 @@ If you're building agents seriously this year:
 2. **Week 2:** `pydantic-ai` quickstart + their cookbook
 3. **Week 3:** read the LangGraph "agentic patterns" docs — you don't need to use LangGraph, but the patterns generalize
 4. **Week 4:** build something real with no framework, just the SDK. You'll know what you need.
+
+## See also
+
+- [`../starter/guarded_agent.py`](../starter/guarded_agent.py) — reference Python agent using just the SDK
+- [`repos-to-study.md`](repos-to-study.md) — real agent codebases worth reading
+- [`safeguards.md`](safeguards.md) — what `tenacity`, `rich`, and observability buy you in production

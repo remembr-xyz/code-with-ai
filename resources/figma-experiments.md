@@ -1,5 +1,7 @@
 # Figma experiments — full app designs
 
+> **TL;DR** Clone a Figma design, point the Figma MCP at it, watch a real model turn it into code. For the MCP setup itself, see [`../starter/examples/mcp/figma.md`](../starter/examples/mcp/figma.md) — two paths (Figma Desktop's Dev Mode MCP, or the Framelink npm package).
+
 Free, complete application designs you can clone into your Figma account, then point Cursor's Figma MCP at and turn into real code.
 
 These are **full applications**, not component libraries. The point is to feel what it's like to convert a real multi-screen design into a working codebase via MCP — and to compare what different models (Claude, GPT-5, local Ollama) produce from the same input.

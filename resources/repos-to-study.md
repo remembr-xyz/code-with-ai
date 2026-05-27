@@ -1,5 +1,7 @@
 # Repos to study
 
+> **TL;DR** Read 3 real agent codebases before you write your own. Best three: [`sst/opencode`](https://github.com/sst/opencode) (clean, modern), [`paul-gauthier/aider`](https://github.com/paul-gauthier/aider) (small, Pythonic), [`anthropics/anthropic-cookbook`](https://github.com/anthropics/anthropic-cookbook) (recipes). For AGENTS.md examples specifically, jump to [`../starter/examples/agents-md/`](../starter/examples/agents-md/).
+
 You learn more from reading good code than from any tutorial. This is the list of repos worth cloning and reading end-to-end — not because you'll use them, but because the patterns inside them will rewire how you build.
 
 ## Reference agents to read
@@ -57,14 +59,24 @@ Library + philosophy for human-in-the-loop agents. The README is the most import
 
 ### Real-world `AGENTS.md` files in the wild
 
-- **[`sst/opencode/AGENTS.md`](https://github.com/sst/opencode/blob/main/AGENTS.md)** — concise, opinionated
-- **[`agents.md`](https://agents.md)** — the spec itself, with examples
-- **[`cursor.directory`](https://cursor.directory)** — filterable by stack; clone the ones for your tech
+The curated, annotated reading guide for AGENTS.md examples lives at [`../starter/examples/agents-md/`](../starter/examples/agents-md/). Seven verified production examples, ordered from shortest to most thorough:
+
+1. [`sst/opencode`](https://github.com/sst/opencode/blob/dev/AGENTS.md) — start here, ~4 KB
+2. [`temporalio/temporal`](https://github.com/temporalio/temporal/blob/main/AGENTS.md) — voice-shaping
+3. [`vercel/ai`](https://github.com/vercel/ai/blob/main/AGENTS.md) — monorepo pattern
+4. [`openai/codex`](https://github.com/openai/codex/blob/main/AGENTS.md) — the rigorous one
+5. [`apache/airflow`](https://github.com/apache/airflow/blob/main/AGENTS.md) — strictest, most mature
+
+Plus the cross-tool spec at [agents.md](https://agents.md/).
 
 ### Real-world `.cursorrules` files
 
-- **[`PatrickJS/awesome-cursorrules`](https://github.com/PatrickJS/awesome-cursorrules)** — by framework: React, Next.js, FastAPI, Django, Rust, Go, more
-- Pick three for stacks you don't use. Read them. You'll spot patterns that translate to yours.
+The curated reading guide for cursor rules lives at [`../starter/examples/cursor-rules/`](../starter/examples/cursor-rules/). Highlights:
+
+- **[`PatrickJS/awesome-cursorrules`](https://github.com/PatrickJS/awesome-cursorrules)** — 39.7k stars, ~190 `.mdc` files indexed by stack
+- **[`cursor.directory`](https://cursor.directory)** — community-curated catalog with a UI
+- **[`shadcn-ui/ui/.cursor/rules/`](https://github.com/shadcn-ui/ui/blob/main/.cursor/rules/registry-bases-parity.mdc)** — narrow invariant example
+- **[`supabase/supabase/.cursor/rules/docs/`](https://github.com/supabase/supabase/tree/master/.cursor/rules/docs)** — path-scoped rules pattern
 
 ## Agent frameworks worth studying (even if you don't adopt)
 

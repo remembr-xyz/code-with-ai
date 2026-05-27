@@ -1,5 +1,7 @@
 # Tools
 
+> **TL;DR** Cursor is the workshop default. Claude Code if you prefer terminal. Aider if you want maximum control. Continue if you want local-first. Everything else is a variation on those four. Comparison table at the bottom.
+
 The shortlist of AI coding tools worth your time, with honest notes on when to use which.
 
 ## The big four
@@ -66,3 +68,21 @@ Three questions:
 3. **Are you running cloud or local?** Cloud → any of these. Local-first → Continue + Ollama, or Aider with `ollama/llama3.1`.
 
 There's no wrong answer at the workshop level. Tonight we used Cursor because it's the friendliest entry point.
+
+## Comparison at a glance
+
+| Tool | Pricing | Best feature | MCP support | Local models | Best for |
+|---|---|---|---|---|---|
+| [Cursor](https://cursor.sh) | Free / $20 mo | Inline edits + chat in one editor | ✅ | ⚠️ (custom URL) | Workshop default, day-to-day work |
+| [Claude Code](https://code.claude.com) | Free with Claude Pro/Max | Terminal-native, hooks, skills | ✅ | ❌ | Terminal lovers, scriptable workflows |
+| [Codex](https://platform.openai.com/docs/codex) | Pay-per-use | Strong with GPT-5 | ⚠️ partial | ❌ | OpenAI-deep teams |
+| [Aider](https://aider.chat) | Free + API costs | Auto-commits, git-native, model-agnostic | ⚠️ partial | ✅ | Max control + audit trail |
+| [Cline](https://github.com/cline/cline) | Free + API costs | Open-source, transparent | ✅ | ✅ | Inspectable agent loop |
+| [Continue](https://continue.dev) | Free + API costs | Best local-model story | ✅ | ✅ | VS Code + Ollama |
+| [opencode](https://github.com/sst/opencode) | Free + API costs | Self-hosted, web UI option | ✅ | ✅ | Own-the-stack folks |
+
+## See also
+
+- [`../starter/examples/cursor-rules/`](../starter/examples/cursor-rules/) — `.cursor/rules/*.mdc` patterns from real production repos
+- [`prompting.md`](prompting.md) — same prompt patterns work across tools
+- [`safeguards.md`](safeguards.md) — tool-agnostic guardrails
