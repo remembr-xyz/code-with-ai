@@ -56,6 +56,20 @@ Start with [`labs/`](labs/) — the labs are standalone and total ~90 minutes. A
 
 Go straight to [`starter/examples/`](starter/examples/). It's the inspiration gallery — real `AGENTS.md`, `.cursorrules`, `mcp.json`, and `CLAUDE.md` files from production repos (openai/codex, sst/opencode, vercel/ai, apache/airflow, supabase, shadcn-ui, and others), each annotated with what's worth noticing.
 
+### You want examples for *your* language
+
+Both the [AGENTS.md gallery](starter/examples/agents-md/README.md#by-language) and the [cursor-rules gallery](starter/examples/cursor-rules/README.md#by-language--deep-links-into-awesome-cursorrules) have **"by language" sections** covering:
+
+- **Python** — pydantic-ai, ruff, uv, airflow, langchain (+ 13 awesome-cursorrules entries)
+- **React Native** — gesture-handler, react-native-firebase, repack (+ Expo/Expo-Router rules)
+- **Kotlin** — IntelliJ Community, Ktor, Now in Android (+ Ktor, Spring Boot, Jetpack Compose rules)
+- **Swift / iOS** — Vapor, stripe-ios (+ SwiftUI and UIKit rules) ⚠️ ecosystem adoption is thin
+- **Go** — Kubernetes, Grafana, Prometheus (+ generic + REST + Temporal rules)
+- **Rust** — uv (Rust internals), Deno (CLAUDE.md), Rerun (+ 2 generic rule files)
+- **TypeScript / Node** — sst/opencode, vercel/ai, openai/codex, browser-use
+
+All entries verified to exist with byte sizes on 2026-05-27.
+
 ## Tonight's run-of-show
 
 Talk runs 6:00–6:25 in the auditorium. Doors open at 5:45. Labs start at 6:30 sharp.

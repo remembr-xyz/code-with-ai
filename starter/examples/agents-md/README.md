@@ -14,6 +14,75 @@ The cross-tool standard lives at [agents.md](https://agents.md/). One file, ever
 | The most opinionated "shape how the agent talks" | [`temporalio/temporal`](https://github.com/temporalio/temporal/blob/main/AGENTS.md) (~8 KB) |
 | The biggest, strictest, most production-grade | [`apache/airflow`](https://github.com/apache/airflow/blob/main/AGENTS.md) (~28 KB) |
 
+## By language
+
+If you're searching for inspiration in your stack, here are verified `AGENTS.md` from production repos in each language. All confirmed 2026-05-27.
+
+### Python
+
+| Repo | Size | Why notable |
+|---|---|---|
+| [`pydantic/pydantic-ai`](https://github.com/pydantic/pydantic-ai/blob/main/AGENTS.md) | 12 KB | The most *opinionated* AGENTS.md I found. Opens with "Your primary responsibility is to the project and its users" — explicitly framing the agent as defending against low-quality contributions ahead of the requesting user. Encodes taste and API-design discipline, not just commands. |
+| [`astral-sh/ruff`](https://github.com/astral-sh/ruff/blob/main/AGENTS.md) | 6 KB | Concrete and command-heavy: exact `cargo test` invocations with `CARGO_PROFILE_DEV_OPT_LEVEL`, `INSTA_FORCE_PASS`, `MDTEST_UPDATE_SNAPSHOTS` flags. The "encode the actual test command" pattern. |
+| [`astral-sh/uv`](https://github.com/astral-sh/uv/blob/main/AGENTS.md) | 1.4 KB | The tightest possible AGENTS.md — every line is a PREFER/AVOID/NEVER/ALWAYS verb. Proof you don't need length to be useful. |
+
+Plus [`apache/airflow`](https://github.com/apache/airflow/blob/main/AGENTS.md) and [`langchain-ai/langchain`](https://github.com/langchain-ai/langchain/blob/master/AGENTS.md) in the full catalog below.
+
+> Verified missing: `fastapi/fastapi`, `pydantic/pydantic`, `django/django`, `pallets/flask`, `numpy/numpy`, `python-poetry/poetry`, `huggingface/diffusers` (all 404 on AGENTS.md as of 2026-05-27).
+
+### React Native / mobile JS+TS
+
+| Repo | Size | Why notable |
+|---|---|---|
+| [`software-mansion/react-native-gesture-handler`](https://github.com/software-mansion/react-native-gesture-handler/blob/main/AGENTS.md) | 2.4 KB | Best RN library example. Calls out the multiplatform shape (Android / iOS / web / macOS paths) and warns the agent that "this project contains 3 versions of API" — the kind of project-shape context an agent can't infer from `ls`. |
+| [`invertase/react-native-firebase`](https://github.com/invertase/react-native-firebase/blob/main/AGENTS.md) | 1.8 KB | Yarn-workspaces monorepo example. Has a useful "Dev environment tips" section: install at root, check `type-test.ts` / `__tests__/` before touching public APIs. |
+| [`callstack/repack`](https://github.com/callstack/repack/blob/main/AGENTS.md) | 1.6 KB | Introduces a "Package Map (Relatively Stable Context)" pattern — labels which sections are stable vs. churny, helping the agent decide what to re-read. |
+
+> Verified missing: `expo/expo`, `facebook/react-native`, `software-mansion/react-native-reanimated`, `Shopify/flash-list`, `tamagui/tamagui`, `mrousavy/react-native-vision-camera`, `Microsoft/react-native-windows` (all 404). RN ecosystem adoption is still thin in 2026.
+
+### Kotlin
+
+| Repo | Size | Why notable |
+|---|---|---|
+| [`JetBrains/intellij-community`](https://github.com/JetBrains/intellij-community/blob/master/AGENTS.md) | 5 KB | Uses YAML frontmatter (`languages: [Kotlin, Java]`, `build-system: Bazel`) and points at module-specific *child* AGENTS.md files. Best nested/scoped AGENTS.md pattern for huge monorepos. |
+| [`ktorio/ktor`](https://github.com/ktorio/ktor/blob/main/AGENTS.md) | 6 KB | Has a "Critical Workflow Rule" block telling the agent to never return control without running tests + assemble + lint + ABI validation, with exact Gradle commands. Strong example of encoding a non-negotiable quality gate. |
+| [`android/nowinandroid`](https://github.com/android/nowinandroid/blob/main/AGENTS.md) | 3 KB | Google's reference modern Android app. Documents the architecture (Compose + Hilt + Room + WorkManager) so the agent knows the patterns to match. The canonical "modern Android" example. |
+
+> Verified missing: every `square/*` repo (okhttp, retrofit), every `Kotlin/kotlinx.*`, every `cashapp/*`. `JetBrains/kotlin` has a 235-byte stub — not worth showcasing.
+
+### Swift / iOS
+
+| Repo | Size | Why notable |
+|---|---|---|
+| [`vapor/vapor`](https://github.com/vapor/vapor/blob/main/AGENTS.md) | 3 KB | Unusual angle: this AGENTS.md is mostly *governance*, not implementation guidance. "Do not use automated agents to claim, triage, or submit solutions to good-first-issue tickets." "Fully automated PRs will be closed." Worth showing as the "AGENTS.md as policy" pattern. |
+| [`stripe/stripe-ios`](https://github.com/stripe/stripe-ios/blob/master/AGENTS.md) | 6.4 KB | Real production iOS SDK from a major fintech. Ships both [AGENTS.md](https://github.com/stripe/stripe-ios/blob/master/AGENTS.md) and [CLAUDE.md](https://github.com/stripe/stripe-ios/blob/master/CLAUDE.md) — useful side-by-side data point on how teams split or duplicate the two files. |
+
+> **Swift/iOS adoption is thin** — the candidates listed (`apple/swift`, `pointfreeco/swift-composable-architecture`, `Alamofire`, `realm-swift`, `lottie-ios`, `Quick/Nimble`, `swift-package-manager`, `swift-nio`, `Sourcery`, `Nuke`, `GRDB`) all returned 404 on both AGENTS.md and CLAUDE.md as of 2026-05-27. Vapor and stripe-ios are the only two strong examples in major iOS OSS. If you ship a Swift project with a good AGENTS.md, it's worth publishing publicly — the ecosystem needs reference examples.
+
+### Go
+
+| Repo | Size | Why notable |
+|---|---|---|
+| [`kubernetes/kubernetes`](https://github.com/kubernetes/kubernetes/blob/master/AGENTS.md) | 1.4 KB | Opens with "Communication Preferences" (dry humor, no preambles) — rare example of encoding *voice* in AGENTS.md. The constraints are gold: "Generated files are read-only", "go.mod/go.work are generated… Never `go mod tidy`", "Staging is source of truth." Project-specific footgun guidance at its best. |
+| [`grafana/grafana`](https://github.com/grafana/grafana/blob/main/AGENTS.md) | 8 KB | Has a `<!-- version: 2.0.0 -->` marker (interesting versioning pattern) and points at directory-scoped child AGENTS.md files. Good "AGENTS.md hierarchy" example for medium-sized projects. |
+| [`prometheus/prometheus`](https://github.com/prometheus/prometheus/blob/main/AGENTS.md) | 5 KB | Self-describes as "patterns and preferences observed from maintainer reviews of recently merged pull requests" — grounds AGENTS.md in real review history rather than top-down rules. Includes literal example PR titles. |
+
+> Verified missing: every HashiCorp repo (`terraform`, `vault`, `consul`, `nomad`), `gin-gonic/gin`, `spf13/cobra`, `etcd-io/etcd`, `docker/cli`, `golang/go` itself.
+
+### Rust
+
+| Repo | Size | Why notable |
+|---|---|---|
+| [`astral-sh/uv`](https://github.com/astral-sh/uv/blob/main/AGENTS.md) | 1.4 KB | Same file as the Python entry above — but contents are entirely Rust internals: `cargo xwin clippy`, `#[expect()]` vs `#[allow()]`, "ALWAYS write `SAFETY` comments." Best compact Rust AGENTS.md. |
+| [`denoland/deno`](https://github.com/denoland/deno/blob/main/CLAUDE.md) | 12 KB | **CLAUDE.md, not AGENTS.md** — Deno doesn't publish AGENTS.md. Comprehensive "Deno Development Guide" with TOC, git workflow, codebase navigation, debugging, troubleshooting. Best "treat agent-facing doc as full onboarding manual" example. |
+| [`rerun-io/rerun`](https://github.com/rerun-io/rerun/blob/main/AGENTS.md) | 8 KB | Real production Rust visualization SDK. Worth reading as a non-trivial *application* (not language tooling). |
+
+> Verified missing: `rust-lang/rust`, all of `tokio-rs/*`, `bevyengine/bevy`, `helix-editor/helix`, `getzola/zola`. Rust frequently uses CLAUDE.md instead of AGENTS.md — Deno is the clearest example.
+
+### TypeScript / Node
+
+This is the most-covered ecosystem in the gallery already. See [`sst/opencode`](https://github.com/sst/opencode/blob/dev/AGENTS.md), [`vercel/ai`](https://github.com/vercel/ai/blob/main/AGENTS.md), [`openai/codex`](https://github.com/openai/codex/blob/main/AGENTS.md), and [`browser-use/browser-use`](https://github.com/browser-use/browser-use/blob/main/AGENTS.md) in the main catalog below.
+
 ## The full catalog (annotated)
 
 ### 1. [`sst/opencode`](https://github.com/sst/opencode/blob/dev/AGENTS.md) — start here

@@ -59,7 +59,9 @@ Library + philosophy for human-in-the-loop agents. The README is the most import
 
 ### Real-world `AGENTS.md` files in the wild
 
-The curated, annotated reading guide for AGENTS.md examples lives at [`../starter/examples/agents-md/`](../starter/examples/agents-md/). Seven verified production examples, ordered from shortest to most thorough:
+The curated, annotated reading guide for AGENTS.md examples lives at [`../starter/examples/agents-md/`](../starter/examples/agents-md/) — including a **by-language section** with verified examples for Python (pydantic-ai, ruff, uv), React Native (gesture-handler, firebase, repack), Kotlin (IntelliJ Community, Ktor, Now in Android), Swift/iOS (Vapor, stripe-ios), Go (Kubernetes, Grafana, Prometheus), and Rust (uv, Deno, Rerun).
+
+Cross-stack picks, ordered from shortest to most thorough:
 
 1. [`sst/opencode`](https://github.com/sst/opencode/blob/dev/AGENTS.md) — start here, ~4 KB
 2. [`temporalio/temporal`](https://github.com/temporalio/temporal/blob/main/AGENTS.md) — voice-shaping

@@ -83,6 +83,66 @@ The deck (slide 16) breaks this out by role. Verbatim from the appendix:
 
 Same skeleton, different priorities. Pick the role closest to your project and adapt.
 
+## By language — deep links into `awesome-cursorrules`
+
+[`PatrickJS/awesome-cursorrules`](https://github.com/PatrickJS/awesome-cursorrules) is **flat** — all 256 rule files sit one level deep in [`rules/`](https://github.com/PatrickJS/awesome-cursorrules/tree/main/rules), no subdirectories by language. Below are deep links to specific `.mdc` files per language (all verified 2026-05-27).
+
+### Python
+
+| File | Size | Use for |
+|---|---|---|
+| [`python.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/python.mdc) | 3.3 KB | Generic Python |
+| `python-fastapi-cursorrules-prompt-file.mdc` | – | FastAPI stack |
+| `python-django-cursorrules-prompt-file.mdc` | – | Django stack |
+| `python-flask-cursorrules-prompt-file.mdc` | – | Flask stack |
+| `python-llm-ml-workflow-cursorrules-prompt-file.mdc` | – | ML/LLM workflow projects |
+
+Browse the [full list of Python `.mdc` files](https://github.com/PatrickJS/awesome-cursorrules/tree/main/rules) — there are 13+ Python-flavored entries.
+
+### React Native (mobile JS/TS)
+
+| File | Size | Use for |
+|---|---|---|
+| [`react-native-expo-cursorrules-prompt-file.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/react-native-expo-cursorrules-prompt-file.mdc) | 997 B | Expo-based RN projects |
+| `react-native-expo-router-typescript-windows-cursorrules-prompt-file.mdc` | – | Expo + Expo Router + TS on Windows |
+
+### Kotlin (Android + backend)
+
+| File | Size | Use for |
+|---|---|---|
+| [`kotlin-ktor-development-cursorrules-prompt-file.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/kotlin-ktor-development-cursorrules-prompt-file.mdc) | 9.3 KB | Ktor server framework |
+| [`kotlin-springboot-best-practices-cursorrules-prompt-file.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/kotlin-springboot-best-practices-cursorrules-prompt-file.mdc) | 7.2 KB | Spring Boot in Kotlin |
+| `android-jetpack-compose-cursorrules-prompt-file.mdc` | 2.8 KB | Modern Android apps (Compose) |
+
+### Swift / iOS
+
+| File | Size | Use for |
+|---|---|---|
+| [`swiftui-guidelines-cursorrules-prompt-file.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/swiftui-guidelines-cursorrules-prompt-file.mdc) | 4.4 KB | SwiftUI apps |
+| [`swift-uikit-cursorrules-prompt-file.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/swift-uikit-cursorrules-prompt-file.mdc) | 23.9 KB | UIKit (the biggest single rule file in the repo — exhaustive) |
+
+### Go
+
+| File | Size | Use for |
+|---|---|---|
+| [`go.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/go.mdc) | 1.2 KB | Generic Go |
+| `go-backend-scalability-cursorrules-prompt-file.mdc` | – | Scalable backend services |
+| `go-servemux-rest-api-cursorrules-prompt-file.mdc` | – | REST APIs with stdlib `net/http` |
+| `go-temporal-dsl-cursorrules-prompt-file.mdc` | – | Temporal workflow code |
+
+### Rust
+
+| File | Size | Use for |
+|---|---|---|
+| [`rust.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/rust.mdc) | 4.2 KB | Generic Rust |
+| [`rust-general.mdc`](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/rust-general.mdc) | 2.2 KB | Alternative generic Rust ruleset |
+
+### TypeScript / Node
+
+The repo has 30+ TypeScript-flavored rules. Search [`rules/`](https://github.com/PatrickJS/awesome-cursorrules/tree/main/rules) for `typescript-*`, `next-*`, `react-*`, `node-*` to find the one matching your stack.
+
+> **Tip:** the file naming convention is `<stack>[-<framework>-...]-cursorrules-prompt-file.mdc` for stack-specific ones, or just `<language>.mdc` for generic ones. Newer additions tend to use the longer naming. If a deep link 404s, browse [the index](https://github.com/PatrickJS/awesome-cursorrules/tree/main/rules) and grep.
+
 ## A note on the `.cursorrules` we ship
 
 The [`starter/.cursorrules`](../../.cursorrules) in this repo uses the legacy single-file form on purpose — it's easier for a workshop. If you find yourself adding rule #20, that's the signal to migrate to `.cursor/rules/*.mdc` instead.

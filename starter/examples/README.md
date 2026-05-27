@@ -8,8 +8,8 @@ The deck (slide 33) tells you to read three real `AGENTS.md` files end-to-end �
 
 | Folder | What it covers |
 |---|---|
-| [`agents-md/`](agents-md/) | 7 real `AGENTS.md` files from production repos (openai/codex, sst/opencode, vercel/ai, apache/airflow, browser-use, temporalio/temporal, langchain-ai/langchain), with annotations |
-| [`cursor-rules/`](cursor-rules/) | Cursor rules — the legacy `.cursorrules` single-file form **and** the modern `.cursor/rules/*.mdc` directory pattern that big projects (shadcn, supabase, next.js) have moved to |
+| [`agents-md/`](agents-md/) | Real `AGENTS.md` from production repos — **7 cross-stack picks** (openai/codex, sst/opencode, vercel/ai, apache/airflow, etc.) **plus a "by language" section** with verified examples for Python, React Native, Kotlin, Swift, Go, Rust |
+| [`cursor-rules/`](cursor-rules/) | Cursor rules — legacy `.cursorrules` **and** modern `.cursor/rules/*.mdc`, **plus deep links by language** into `awesome-cursorrules` (Python, React Native, Kotlin, Swift, Go, Rust) |
 | [`mcp/`](mcp/) | Ready-to-paste `mcp.json` configs (filesystem-scoped, full starter kit, Figma) + the verified list of MCP starters as of May 2026 |
 | [`claude-md/`](claude-md/) | How `CLAUDE.md` relates to `AGENTS.md` — short answer: `@AGENTS.md` import |
 
