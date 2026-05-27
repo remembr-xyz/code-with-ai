@@ -1,5 +1,7 @@
 # Lab 5 — Local models (bonus)
 
+> **TL;DR** Install Ollama, pull `qwen2.5-coder:7b`, point Cursor at `localhost:11434/v1`. Turn off WiFi. Watch the agent still work. The most guarded agent is the one that never sends data anywhere.
+
 **Time:** 5–15 minutes
 **Goal:** Point Cursor at a model running on your laptop. Turn WiFi off. Watch it still work.
 
@@ -145,3 +147,9 @@ You should have:
 - A sense of where local models stand vs. cloud
 
 That's the night. Hit the [resources](../resources/) folder for what to read next, and find me after if you want to keep talking.
+
+## Going deeper
+
+- [`../resources/local-models.md`](../resources/local-models.md) — the broader survey of runtimes, models, and hardware tradeoffs
+- [`../resources/tools.md`](../resources/tools.md) — Aider and Continue have the best local-model UX if Cursor's setup gets fiddly
+- [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/) — best community for local-model news, quants, hardware questions

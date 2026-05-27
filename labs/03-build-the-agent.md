@@ -1,5 +1,7 @@
 # Lab 3 — Make Cursor your guarded agent
 
+> **TL;DR** Cursor + your AGENTS.md + your scoped MCP server IS the guarded agent. Give it a real task, watch the loop, add one new rule based on what you observe. The optional Python reference agent is in [`../starter/guarded_agent.py`](../starter/guarded_agent.py) if you want to look under the hood.
+
 **Time:** 20 minutes (7:20–7:40)
 **Goal:** Stop thinking of "the agent" as a thing you'll build someday. **Cursor + your AGENTS.md + your scoped MCP server *is* the guarded agent.** This lab is where you make that real and prove it to yourself.
 
@@ -136,3 +138,9 @@ None of these are required for the workshop. They're for after, if you want to e
 You've built a guarded agent. It's running. Lab 4 is where you try to break it.
 
 Next: [Lab 4 — Red team your guardrails](04-red-team.md).
+
+## Going deeper
+
+- [`../resources/python-libs.md`](../resources/python-libs.md) — when to reach for `pydantic-ai`, `langgraph`, or `litellm`
+- [`../resources/repos-to-study.md`](../resources/repos-to-study.md) — 5 reference agent codebases worth reading end-to-end
+- [`../starter/examples/agents-md/`](../starter/examples/agents-md/) — see how mature projects structure their agent briefings

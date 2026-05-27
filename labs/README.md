@@ -1,6 +1,6 @@
 # Labs
 
-Six labs, in order. Each runs 10–20 minutes. Together they take you from "Cursor installed" to "guarded agent shipped, red-teamed, and optionally running offline."
+> **TL;DR** Six labs, in order. ~90 minutes total. Together they take you from "Cursor installed" to "guarded agent shipped, red-teamed, and optionally running offline."
 
 | # | Lab | Time | What you walk away with |
 |---|-----|------|-------------------------|
@@ -30,3 +30,23 @@ Each lab has a "stretch goal" or "Option B" path. Use it. Or jump to a resource 
 
 **What if I'm slower?**
 Lab 0 has a troubleshooting table. After that, ask your neighbor or the facilitator. The labs don't penalize you for stopping mid-way — pick up where you left off.
+
+## Lab quick-reference (slide A11)
+
+If you fall behind, you can skip ahead at the next lab boundary. Each lab is standalone.
+
+| Lab | One-line goal |
+|---|---|
+| **00** | Cursor open · model picked · project folder ready |
+| **01** | Customize 9-section AGENTS.md template for your project; verify Cursor cites it |
+| **02** | Edit `mcp.json` with absolute path; verify out-of-scope read is blocked |
+| **03** | Give Cursor a real task; watch the loop; add one new rule based on what you saw |
+| **04** | Run 5 attacks (path traversal · symlink · prompt injection · secret extraction · authority spoof); patch one |
+| **05** | Install Ollama · point Cursor at `localhost:11434/v1` · WiFi off · agent still works |
+
+## See also
+
+- [`../starter/examples/`](../starter/examples/) — the inspiration gallery: real AGENTS.md, cursor rules, MCP configs, CLAUDE.md
+- [`../resources/`](../resources/) — the curated reference material (the labs are the practice; resources are the reading)
+- [`../resources/safeguards.md`](../resources/safeguards.md) — the deeper material behind Lab 4
+- [`../resources/glossary.md`](../resources/glossary.md) — every term in the workshop, defined

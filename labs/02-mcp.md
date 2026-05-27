@@ -1,5 +1,7 @@
 # Lab 2 — MCP, scoped
 
+> **TL;DR** Install the filesystem MCP server scoped to your workshop folder. Confirm the wall holds: in-scope reads work, out-of-scope reads get refused. Optionally add a second server. Ready-to-paste configs in [`../starter/examples/mcp/`](../starter/examples/mcp/).
+
 **Time:** 20 minutes (7:00–7:20)
 **Goal:** Install the filesystem MCP server, configure it to *only* see your project folder, and confirm the scope holds. By the end you'll have an agent that can read and write files — but only the ones you said it could.
 
@@ -92,6 +94,8 @@ You should see the agent attempt the read and the MCP server refuse — usually 
 
 If the filesystem server works, add one more so the agent can fetch URLs. This is genuinely useful for "summarize this article" tasks and it's a one-liner.
 
+The fetch server is a Python package (run via `uvx`) — different from filesystem's `npx`. If you don't have `uvx`, install it: `curl -LsSf https://astral.sh/uv/install.sh | sh`.
+
 Update `mcp.json` to:
 
 ```json
@@ -106,12 +110,14 @@ Update `mcp.json` to:
       ]
     },
     "fetch": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
     }
   }
 }
 ```
+
+For the full 4-server starter kit (filesystem + fetch + git + sequential-thinking), see [`../starter/examples/mcp/full-starter-kit.json`](../starter/examples/mcp/full-starter-kit.json).
 
 Then test:
 
@@ -146,10 +152,10 @@ That last line is the move. The AI now has explicit instructions about what it *
 
 You'll see these in tutorials and want to install them. Don't. They have sharp edges that bite beginners. We'll cover them properly in Lab 4.
 
-- **`@modelcontextprotocol/server-git`** — gives the agent commit/push/branch access. Power tool. Wrong setup and the agent rewrites your history.
-- **`@modelcontextprotocol/server-shell`** — runs arbitrary shell commands. This is the unguarded-agent trap.
+- **`mcp-server-git` (write mode)** — gives the agent commit/push/branch access. Power tool. Wrong setup and the agent rewrites your history. Read-only mode is in the [full-starter-kit.json](../starter/examples/mcp/full-starter-kit.json) — that's fine.
+- **`server-shell` (any variant)** — runs arbitrary shell commands. This is the unguarded-agent trap.
 
-If you want them later, install them with explicit scope limits and a strict allow-list in your AGENTS.md. For now, file system + fetch is plenty.
+If you want them later, install them with explicit scope limits and a strict allow-list in your AGENTS.md. For now, filesystem + fetch is plenty.
 
 ---
 
@@ -174,3 +180,10 @@ You should have:
 - An updated `AGENTS.md` Section 7 that explicitly lists what the agent has
 
 Next: [Lab 3 — Build the guarded agent](03-build-the-agent.md). We're going to write the actual Python script that ties it all together — and now you've got the tool layer to plug it into.
+
+## Going deeper
+
+- [`../starter/examples/mcp/`](../starter/examples/mcp/) — ready-to-paste configs (filesystem-scoped, full starter kit, Figma)
+- [`../resources/mcp-servers.md`](../resources/mcp-servers.md) — the broader survey of useful MCPs + vetting checklist
+- [`../starter/examples/mcp/figma.md`](../starter/examples/mcp/figma.md) — Figma MCP setup (both first-party and community npm)
+- [modelcontextprotocol.io](https://modelcontextprotocol.io) — the spec itself, ~30-min read

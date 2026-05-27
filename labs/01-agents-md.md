@@ -1,9 +1,13 @@
 # Lab 1 — `AGENTS.md` for your guarded agent
 
+> **TL;DR** Fill in the 9-section template for your project, with explicit guardrails (especially Section 6). 20 minutes. Skim 1–2 real `AGENTS.md` from [`../starter/examples/agents-md/`](../starter/examples/agents-md/) first if you want inspiration.
+
 **Time:** 20 minutes (6:40–7:00)
 **Goal:** Customize the starter `AGENTS.md` for *your* project, with explicit guardrails. By the end, Cursor should reference your file when answering questions about your project.
 
 > This is the single most valuable file you'll write tonight. If you only finish one lab, finish this one.
+
+If you want inspiration before writing yours, the [`../starter/examples/agents-md/`](../starter/examples/agents-md/) folder has 7 real `AGENTS.md` files from production repos (openai/codex, sst/opencode, vercel/ai, apache/airflow, etc.) annotated with what's worth noticing in each. Read the shortest one ([`sst/opencode`](https://github.com/sst/opencode/blob/dev/AGENTS.md), ~4 KB) before you start.
 
 ---
 
@@ -171,3 +175,9 @@ You should be staring at:
 - A clearer sense of what "guarded" actually means
 
 **Tap your neighbor. Quick swap — show each other your DON'T lists. You'll learn from theirs.** Next: [Lab 2 — MCP with scope limits](02-mcp.md).
+
+## Going deeper
+
+- [`../starter/examples/agents-md/`](../starter/examples/agents-md/) — 7 real `AGENTS.md` files, annotated. Read three end-to-end.
+- [`../starter/examples/claude-md/`](../starter/examples/claude-md/) — how Claude Code's `CLAUDE.md` relates (one-line `@AGENTS.md` import)
+- [agents.md](https://agents.md/) — the cross-tool spec itself

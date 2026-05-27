@@ -1,5 +1,7 @@
 # Lab 0 — Setup
 
+> **TL;DR** Cursor installed → model picked → workshop folder created → starter files copied → project idea chosen. 10 minutes total. No API keys required.
+
 **Time:** 10 minutes (6:30–6:40)
 **Goal:** Everyone in the room has Cursor open, a model selected, and a project folder ready. No one falls behind in Lab 1.
 
@@ -59,9 +61,15 @@ Two options:
 ```bash
 # From inside ~/sait-workshop:
 git clone https://github.com/remembr-xyz/code-with-ai.git
-cp -r code-with-ai/starter/* code-with-ai/starter/.cursorrules code-with-ai/starter/.gitignore .
-rm -rf code-with-ai
+cp code-with-ai/starter/AGENTS.md \
+   code-with-ai/starter/.cursorrules \
+   code-with-ai/starter/.gitignore \
+   code-with-ai/starter/guarded_agent.py .
+cp -r code-with-ai/starter/prompts .
+# Keep code-with-ai/ around as reference — examples/ is your inspiration gallery
 ```
+
+You now have the workshop scaffolding in your project, with the cloned repo sitting alongside as a reference (see `code-with-ai/starter/examples/` whenever you want real `AGENTS.md` / `.cursorrules` examples to copy patterns from).
 
 ### Option B — Just download the two files
 
@@ -115,3 +123,9 @@ You should be staring at:
 - A project idea in your head
 
 **Tap your neighbor on the shoulder. If they're behind, help them.** Next: [Lab 1 — `AGENTS.md` for your guarded agent](01-agents-md.md).
+
+## Going deeper
+
+- [`../resources/tools.md`](../resources/tools.md) — what if Cursor isn't right for you long-term?
+- [`../resources/glossary.md`](../resources/glossary.md) — every term in this workshop, defined
+- [`../starter/examples/`](../starter/examples/) — the inspiration gallery
