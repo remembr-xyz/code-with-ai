@@ -1,9 +1,21 @@
 # Lab 4 — Red team your guardrails
 
-**Time:** 15 minutes (7:40–7:55)
-**Goal:** Attack your own setup. Find the holes. Patch them. By the end you'll have tried five real attacks against your Cursor configuration and tightened your safeguards in response to at least one.
+> **TL;DR** Run 5 real attacks against your Cursor setup. Find the holes. Patch them. The lab nobody else teaches, and the one that will keep you safe when you ship.
 
-> This is the lab nobody else teaches. It's also the one that will keep you safe when you ship something real.
+**Time:** 15 minutes (7:40–7:55)
+**Goal:** Attack your own setup. By the end you'll have tried five real attacks against your Cursor configuration and tightened your safeguards in response to at least one.
+
+**The 5 attacks map directly to [OWASP ASI Top 10 (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/):**
+
+| Attack | OWASP ASI item |
+|---|---|
+| 1. Path traversal | ASI02 — Tool Misuse & Exploitation |
+| 2. Symlink trickery | ASI02 — Tool Misuse & Exploitation |
+| 3. Prompt injection | ASI01 — Agent Goal Hijack |
+| 4. Secret extraction | ASI04 — Agentic Supply Chain Vulnerabilities (via tool scope) |
+| 5. Authority spoofing | ASI09 — Human-Agent Trust Exploitation |
+
+For the deeper reference behind this lab, see [`../resources/safeguards.md`](../resources/safeguards.md).
 
 ---
 
@@ -12,6 +24,8 @@
 You wrote your `AGENTS.md` and `.cursorrules`. You configured your MCP scope. You trust them. You shouldn't — not yet.
 
 Every agent setup has a vulnerability the author was sure couldn't exist, until someone found it. The fix isn't to *think harder* in advance. The fix is to *attack early*, while your config is small enough to understand top to bottom.
+
+This is not hypothetical. Real production systems have been wiped — see [`../resources/safeguards.md`](../resources/safeguards.md) for the Replit, Cursor/PocketOS, Claude Code/DataTalks, Gemini CLI, and Amazon Kiro postmortems. Each of those teams thought their setup was safe.
 
 Five common attack patterns are below. Run each one against Cursor. Some will be blocked cleanly. Others will surprise you. Patch the ones that do.
 
@@ -185,5 +199,11 @@ You should have:
 - Added two new entries to your `AGENTS.md` gotchas section
 
 You now know more about agent security than most teams shipping agents to production.
+
+## Going deeper
+
+- [`../resources/safeguards.md`](../resources/safeguards.md) — the deeper checklist, OWASP ASI Top 10, real case studies, production-grade additions
+- [Simon Willison — Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) — read this once, internalize it forever
+- [Anthropic Claude Code best practices](https://code.claude.com/docs/en/best-practices) — the *Adversarial review* section especially
 
 Next, if there's time: [Lab 5 — Local models (bonus)](05-local-models.md). Point Cursor at a model running on your laptop. WiFi off, agent still works.
