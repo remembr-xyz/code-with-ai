@@ -40,6 +40,22 @@ cd ~/my-workshop-project
 cursor .   # open in Cursor, then go to labs/00-setup.md
 ```
 
+## How to use this repo
+
+Three audiences. Pick the path that fits:
+
+### You're attending the workshop tonight
+
+Just follow [`labs/00-setup.md`](labs/00-setup.md). Everything is timed to the run-of-show below. Skip the rest until after.
+
+### You're reading from home
+
+Start with [`labs/`](labs/) — the labs are standalone and total ~90 minutes. After (or instead): the [`resources/`](resources/) folder has the curated reading list with a 30-day plan.
+
+### You just want the templates
+
+Go straight to [`starter/examples/`](starter/examples/). It's the inspiration gallery — real `AGENTS.md`, `.cursorrules`, `mcp.json`, and `CLAUDE.md` files from production repos (openai/codex, sst/opencode, vercel/ai, apache/airflow, supabase, shadcn-ui, and others), each annotated with what's worth noticing.
+
 ## Tonight's run-of-show
 
 Talk runs 6:00–6:25 in the auditorium. Doors open at 5:45. Labs start at 6:30 sharp.
@@ -58,25 +74,36 @@ If you finish early or you're reading from home, the labs work standalone. Each 
 ## What's in this repo
 
 ```
-README.md               You are here.
-starter/                Copy this folder into your own project.
-  AGENTS.md             Annotated 9-section template. Customize in Lab 1.
-  .cursorrules          Short focused operating rules.
-  .gitignore            Secrets discipline.
-  prompts/              5 reusable prompts. Steal them.
-labs/                   Six labs in order. Don't skip 00.
-resources/              Curated reading. No filler.
-  tools.md              Cursor, Claude Code, Aider, Continue, opencode
-  python-libs.md        anthropic, openai, pydantic-ai, instructor
-  mcp-servers.md        The four every beginner needs + how to scope them
-  prompting.md          Anthropic prompt library, leaked system prompts, more
-  safeguards.md         The deeper checklist from Lab 4
-  local-models.md       Ollama, LM Studio, llamafile + recommended models
-  further-reading.md    Newsletters, people to follow, papers worth your time
-slides/                 The presentation, exported.
+README.md                       You are here.
+starter/                        Copy this folder into your own project.
+  AGENTS.md                     Annotated 9-section template. Customize in Lab 1.
+  .cursorrules                  Short focused operating rules.
+  .gitignore                    Secrets discipline.
+  guarded_agent.py              ~200-line reference Python agent. Read it.
+  prompts/                      5 reusable prompts. Steal them.
+  examples/                     ★ Inspiration gallery (curated real examples)
+    agents-md/                  7 real AGENTS.md from production repos, annotated
+    cursor-rules/               .cursorrules + .cursor/rules/ patterns in the wild
+    mcp/                        Ready-to-paste MCP configs (filesystem, full kit, Figma)
+    claude-md/                  CLAUDE.md vs AGENTS.md, the @AGENTS.md import pattern
+labs/                           Six labs in order. Don't skip 00.
+resources/                      Curated reading. No filler.
+  README.md                     Index with 4 reading-order paths
+  tools.md                      Cursor, Claude Code, Aider, Continue, opencode, Cline
+  python-libs.md                anthropic, openai, pydantic-ai, litellm, evals, observability
+  mcp-servers.md                The 4 starter MCPs + registry + vetting checklist
+  prompting.md                  Anthropic prompt library, 8 named patterns, leaked prompts
+  safeguards.md                 ★ Lethal Trifecta + 5 real incidents + OWASP ASI Top 10
+  local-models.md               Ollama, LM Studio + recommended models by RAM tier
+  repos-to-study.md             Reference agents worth cloning
+  further-reading.md            Newsletters, people, papers, books, 30-day plan
+  figma-experiments.md          Full-app Figma → code experiments
+  glossary.md                   ★ Every term in the workshop, defined
+slides/                         The presentation, exported.
+CONTRIBUTING.md                 How to suggest improvements
 ```
 
-The most important file in the repo is `starter/AGENTS.md`. Read it before the workshop if you want a head start.
+★ = added or substantially expanded since the original scaffold. The most important file in the repo is `starter/AGENTS.md`; the second-most is `resources/safeguards.md`.
 
 ## Before Wednesday — 5 minutes of prep
 
@@ -93,6 +120,16 @@ Python 3.11+ is only needed if you want to read and modify the reference agent c
 1. Take the `AGENTS.md` you wrote tonight and drop it into a real project at school or work. Watch the AI go from confused to surgical.
 2. Pick three repos from [`resources/further-reading.md`](resources/further-reading.md) and skim them. Skimming is fine — none of these are textbooks.
 3. Subscribe to [Learn Agentic AI](https://learnagentic.substack.com). I write daily about exactly this stuff and the workshop barely scratches the surface.
+
+## Skill ladder — where to go from here
+
+| You are… | Read in this order |
+|---|---|
+| **A beginner just out of the workshop** | 1. [`resources/glossary.md`](resources/glossary.md) (5 min). 2. [`resources/safeguards.md`](resources/safeguards.md) → Lethal Trifecta + Five Guards sections. 3. Drop your AGENTS.md into a real project this week. |
+| **An intermediate dev who wants depth** | 1. Read 3 real AGENTS.md from [`starter/examples/agents-md/`](starter/examples/agents-md/). 2. [`resources/prompting.md`](resources/prompting.md) → 8 named patterns. 3. [`resources/repos-to-study.md`](resources/repos-to-study.md) → pick 2 reference agents. |
+| **Building your own agent** | 1. [`starter/guarded_agent.py`](starter/guarded_agent.py) → read end-to-end. 2. [`resources/python-libs.md`](resources/python-libs.md). 3. [`resources/safeguards.md`](resources/safeguards.md) → OWASP ASI Top 10. 4. Build it. |
+| **Privacy-first / offline** | 1. [`labs/05-local-models.md`](labs/05-local-models.md). 2. [`resources/local-models.md`](resources/local-models.md). 3. [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/) for ongoing updates. |
+| **Going to ship to production** | All of [`resources/safeguards.md`](resources/safeguards.md). [Anthropic Claude Code best practices](https://code.claude.com/docs/en/best-practices). [12-Factor App](https://12factor.net/). |
 
 ## Who built this
 
